@@ -1,0 +1,68 @@
+﻿@model IEnumerable<prjShoppingCar.Models.tOrderDetailData>
+
+@{
+    ViewBag.Title = "訂單明細";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<h2>訂單明細</h2>
+
+<table class="table" style="text-align:center;vertical-align:middle">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product.fImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fOrderGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fPId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDetail.fIsApproved)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/images/@item.product.fImg" style="width:80px;height:108px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fOrderGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fPId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDetail.fIsApproved)
+        </td>
+    </tr>
+}
+
+</table>

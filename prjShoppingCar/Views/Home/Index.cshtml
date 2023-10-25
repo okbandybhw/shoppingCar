@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "產品列表";
+}
+
+<div class="row" style="margin-top:20px">
+    @foreach(var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="~/images/@item.fImg" style="width:100px;height:135px;" />
+                <div class="caption">
+                    <h5>@item.fName</h5>
+                    <p>單價:@item.fPrice</p>
+                    <p><a href="@Url.Action("AddCar","Member")?fPId=@item.fPId" class="btn btn-primary">加入購物車</a></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
